@@ -37,7 +37,7 @@ namespace Lab4
             for (int i = 0; i < no_of_subjects_score; i++)
             {
 
-                Console.WriteLine($"Please enter your scores over 100 for subject {i + 1}");
+                Console.WriteLine($"Please enter your score over 100 for subject {i + 1}");
                 string score = Console.ReadLine();
 
                 while (!double.TryParse(score, out scores[i]))
@@ -70,7 +70,7 @@ namespace Lab4
 
         public static void PromptUser()
         {
-            Console.WriteLine("\n Do you want to perform another calculation?, Enter yes or no");
+            Console.WriteLine("\nDo you want to perform another calculation?, Enter yes or no");
             string response = Console.ReadLine().ToLower();
 
             if (response == "yes")
@@ -79,9 +79,16 @@ namespace Lab4
 
             }
 
-            if (response == "no")
+            else if (response == "no")
             {
                 Console.WriteLine("Thanks, You dont want to perform another calculation");
+            }
+
+            else
+            {
+                Console.WriteLine("You have entered a wrong input, Enter yes or no to continue");
+                PromptUser();
+
             }
 
         }
